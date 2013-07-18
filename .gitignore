@@ -1,0 +1,6 @@
+.DS_Store
+autom4te.cache/
+config.log
+configure
+swig/python/build/
+
