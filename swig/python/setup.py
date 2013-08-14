@@ -1,44 +1,30 @@
 #!/usr/bin/env python
-
-"""
-setup.py file for SWIG example
-"""
-
-import sys
-import os.path
-
-def get_rootdir():
-    return '/home/users/okazaki/local'
-def get_includedir():
-    return os.path.join(get_rootdir(), 'include')
-def get_librarydir():
-    return os.path.join(get_rootdir(), 'lib')
-
-import os; os.environ['CC'] = 'g++'; os.environ['CXX'] = 'g++';
-os.environ['CPP'] = 'g++'; os.environ['LDSHARED'] = 'g++'
-
+import os
+import subprocess
 from distutils.core import setup, Extension
+# os.system('swig -c++ -python -I../../include -o export_wrap.cpp ../export.i')
 
-crfsuite_module = Extension(
-    '_crfsuite',
-    sources = [
-        'crfsuite.cpp',
-        'export_wrap.cpp',
-        ],
-#    include_dirs=['../../include',],
-    extra_link_args=['-shared'],
-#    library_dirs=['../../lib/crf',],
-    libraries=['crfsuite'],
-#    extra_objects=['../../lib/crf/libcrfsuite.la'],
-    language='c++',
-    )
+os.environ['CC'] = 'g++'
+os.environ['CXX'] = 'g++'
+os.environ['CPP'] = 'g++'
+os.environ['LDSHARED'] = 'g++'
+
+link_args = subprocess.check_output(['python-config', '--libs']).split()
 
 setup(
-    name = '@PACKAGE@',
-    version = '@VERSION@',
-    author = 'Naoaki Okazaki',
-    description = """CRFSuite Python module""",
-    ext_modules = [crfsuite_module],
-    py_modules = ["crfsuite"],
-    )
-
+    name='@PACKAGE@',
+    version='@VERSION@',
+    author='Naoaki Okazaki',
+    description='CRFSuite Python module',
+    py_modules=['crfsuite'],
+    ext_modules=[Extension(
+        '_crfsuite',
+        sources=[
+            'crfsuite.cpp',
+            'export_wrap.cpp',
+        ],
+        extra_link_args=['-shared'] + link_args,
+        libraries=['crfsuite', 'dl', 'python2.7'],
+        language='c++',
+    )],
+)

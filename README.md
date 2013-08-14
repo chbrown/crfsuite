@@ -8,16 +8,21 @@ labeling sequential data.
 1. Install dependencies:
     - CentOS / Redhat / Fedora:
         + `yum groupinstall "Development Tools"`
-        + `yum install -y python-dev python-setuptools`
+        + `yum install -y python-dev python-setuptools swig`
     - Ubuntu:
         + `apt-get install build-essential`
     - OS X:
         + Get [Xcode](https://itunes.apple.com/us/app/xcode/id497799835) from the Mac App Store.
         + Get [homebrew](http://brew.sh/)
-        + `brew install shtool`
+        + `brew install coreutils shtool swig`
+    - All: install [libLBFGS](http://www.chokkan.org/software/liblbfgs/)
 2. Configure: `./configure`
 3. Build: `make`
 4. Install: `make install`
+5. Install Python links:
+    - `cd swig/python`
+    - `python setup.py build_ext`
+    - `python setup.py install_lib`
 
 ## License
 
