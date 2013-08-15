@@ -66,7 +66,7 @@ typedef struct tag_crfsuite_params crfsuite_params_t;
 
 #endif/*__CRFSUITE_H__*/
 
-/** 
+/**
 \page crfsuite_hpp_api CRFSuite C++/SWIG API
 
 @section crfsuite_hpp_api_intro Introduction
@@ -86,7 +86,7 @@ C header file (crfsuite.h) and libcrfsuite library are necessary.
 @section crfsuite_hpp_api_swig SWIG API
 
 The SWIG API is identical to the C++ API. Currently, the CRFsuite distribution
-includes a Python module for CRFsuite. Please read README under swig/python
+includes a Python module for CRFsuite. Please read README.md under swig/python
 directory for the information to build the Python module.
 
 @subsection crfsuite_hpp_api_sample Sample code
@@ -185,7 +185,7 @@ class Trainer {
 protected:
     crfsuite_data_t *data;
     crfsuite_trainer_t *tr;
-    
+
 public:
     /**
      * Construct a trainer.
@@ -226,7 +226,7 @@ public:
     /**
      * Run the training algorithm.
      *  This function starts the training algorithm with the data set given
-     *  by append() function. After starting the training process, the 
+     *  by append() function. After starting the training process, the
      *  training algorithm invokes the virtual function message() to report
      *  the progress of the training process.
      *  @param  model       The filename to which the trained model is stored.
@@ -354,7 +354,7 @@ public:
      * Set an item sequence.
      *  This function sets an item sequence for future calls for
      *  viterbi(), probability(), and marginal() functions.
-     *  @param  xseq        The item sequence to be tagged    
+     *  @param  xseq        The item sequence to be tagged
      *  @throw  std::invalid_argument   A model is not opened.
      *  @throw  std::runtime_error      An internal error.
      */

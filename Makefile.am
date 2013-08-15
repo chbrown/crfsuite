@@ -3,7 +3,7 @@
 SUBDIRS = include lib/cqdb lib/crf frontend swig
 
 docdir = $(prefix)/share/doc/@PACKAGE@
-doc_DATA = README INSTALL COPYING AUTHORS ChangeLog
+doc_DATA = README.md INSTALL COPYING AUTHORS ChangeLog
 
 EXTRA_DIST = \
 	crfsuite.sln \

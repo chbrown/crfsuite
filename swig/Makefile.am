@@ -1,7 +1,7 @@
 # $Id:$
 
 EXTRA_DIST = \
-	python/README \
+	python/README.md \
 	python/prepare.sh \
 	python/crfsuite.py \
 	python/export_wrap.h \

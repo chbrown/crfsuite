@@ -10,26 +10,62 @@
 
 ## Installation instructions
 
-1. Install dependencies:
-    - CentOS / Redhat / Fedora:
-        + `yum groupinstall "Development Tools"`
-        + `yum install -y python-dev python-setuptools swig`
-    - Ubuntu:
-        + `apt-get install build-essential`
-    - OS X:
-        + Get [Xcode](https://itunes.apple.com/us/app/xcode/id497799835) from the Mac App Store.
-        + Get [homebrew](http://brew.sh/)
-        + `brew install coreutils shtool swig`
-    - All: install [libLBFGS](http://www.chokkan.org/software/liblbfgs/)
-2. Configure: `./configure`
-3. Build: `make`
-4. Install: `make install`
-5. Install Python links:
-    - `cd swig/python`
-    - Build the SWIG links, but don't install them to `site-packages` yet:
-        + `python setup.py build_ext`
-    - Alternatively, build and install in one go (runs `build_ext` if needed):
-        + `python setup.py install_lib`
+### Get the requisite development environment
+
+* CentOS / Redhat / Fedora:
+
+        yum groupinstall "Development Tools"
+        yum install -y python-dev python-setuptools swig
+
+* Ubuntu:
+
+        apt-get install build-essential
+
+* OS X:
+  + Get [Xcode](https://itunes.apple.com/us/app/xcode/id497799835) from the Mac App Store.
+  + Get [homebrew](http://brew.sh/) and install the packages we'll need:
+
+        brew install coreutils shtool swig
+
+### Get [libLBFGS](http://www.chokkan.org/software/liblbfgs/)
+
+    git clone https://github.com/chbrown/liblbfgs
+    cd liblbfgs
+    ./configure
+    make
+    sudo make install
+
+### Install from source:
+
+    git clone https://github.com/chbrown/crfsuite
+    cd crfsuite
+    ./configure
+    make
+    sudo make install
+
+This will produce the following files (depending on your system's build defaults):
+
+    /usr/local/bin/crfsuite
+    /usr/local/include/crfsuite.h
+    /usr/local/include/crfsuite.hpp
+    /usr/local/include/crfsuite_api.hpp
+    /usr/local/lib/libcrfsuite.a
+    /usr/local/lib/libcrfsuite.la
+    /usr/local/lib/libcrfsuite-0.12.dylib
+    /usr/local/lib/libcrfsuite.dylib -> libcrfsuite-0.12.dylib
+    /usr/local/share/doc/crfsuite/*
+
+### Install Python links:
+
+    cd swig/python
+
+Build the SWIG links, but don't install them to `site-packages` yet:
+
+    python setup.py build_ext
+
+Install into the local Python's `site-packages`:
+
+    python setup.py install_lib
 
 
 ## Development

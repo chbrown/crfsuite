@@ -3,7 +3,7 @@
  *
  * Copyright (c) 2005-2007 Jesse Long <jpl@unknown.za.net>
  * All rights reserved.
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
@@ -28,7 +28,7 @@
  */
 
 /*
- * Please see the `README' file, the documentation in the `doc' directory and
+ * Please see the `README.md' file, the documentation in the `doc' directory and
  * the `rumavl.c' source file for more information.
  */
 
@@ -43,7 +43,7 @@ extern "C" {
 
 
 
-    
+
 /*----------------------------------------------------------------------------
  * DATA TYPES
  *--------------------------------------------------------------------------*/
@@ -62,7 +62,7 @@ typedef struct rumavl_node RUMAVL_NODE;
  *--------------------------------------------------------------------------*/
 
 /* Create a new RumAVL tree */
-RUMAVL *rumavl_new (size_t reclen, 
+RUMAVL *rumavl_new (size_t reclen,
 		    int (*cmp)(const void *, const void *, size_t, void *),
 		    void *(*alloc)(void *, size_t, void *),
 		    void *udata);
@@ -121,7 +121,7 @@ extern int rumavl_foreach (RUMAVL *tree, int dir,
  * Functions giving you more control over the actions of this library.
  *--------------------------------------------------------------------------*/
 
-int (**rumavl_owcb(RUMAVL *tree))(RUMAVL *, RUMAVL_NODE *, void *, 
+int (**rumavl_owcb(RUMAVL *tree))(RUMAVL *, RUMAVL_NODE *, void *,
 	const void *, void *);
 int (**rumavl_delcb(RUMAVL *tree))(RUMAVL *, RUMAVL_NODE *, void *, void *);
 
