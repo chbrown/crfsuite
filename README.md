@@ -63,9 +63,17 @@ Build the SWIG links, but don't install them to `site-packages` yet:
 
     python setup.py build_ext
 
+You might need to tell Python where to look for the library, once it's all linked up, with the `-R` flag.
+
+    python setup.py build_ext -R /usr/local/lib
+
 Install into the local Python's `site-packages`:
 
     python setup.py install_lib
+
+Or maybe:
+
+    sudo python setup.py install_lib
 
 
 ## Development
