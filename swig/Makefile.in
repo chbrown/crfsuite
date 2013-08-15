@@ -286,6 +286,7 @@ clean-am: clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-am
 	-rm -f Makefile
+	-rm -rf python/build
 distclean-am: clean-am distclean-generic
 
 dvi: dvi-am
