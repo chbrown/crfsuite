@@ -25,7 +25,7 @@
   + Get [Xcode](https://itunes.apple.com/us/app/xcode/id497799835) from the Mac App Store.
   + Get [homebrew](http://brew.sh/) and install the packages we'll need:
 
-          brew install coreutils shtool swig
+            brew install coreutils shtool swig
 
 ### Get [libLBFGS](http://www.chokkan.org/software/liblbfgs/)
 
