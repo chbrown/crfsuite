@@ -35,6 +35,16 @@
     make
     sudo make install
 
+This will write the following files (depending on your system's build defaults):
+
+    /usr/local/include/lbfgs.h
+    /usr/local/lib/liblbfgs-1.10.dylib
+    /usr/local/lib/liblbfgs.a
+    /usr/local/lib/liblbfgs.dylib -> liblbfgs-1.10.dylib
+    /usr/local/lib/liblbfgs.la
+    /usr/local/share/doc/liblbfgs/*
+
+
 ### Install from source:
 
     git clone https://github.com/chbrown/crfsuite
@@ -43,7 +53,7 @@
     make
     sudo make install
 
-This will produce the following files (depending on your system's build defaults):
+This will produce the following files (again, depending on your system's build defaults):
 
     /usr/local/bin/crfsuite
     /usr/local/include/crfsuite.h
